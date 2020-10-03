@@ -1,0 +1,390 @@
+@charset "UTF-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Meiryo, sans-serif;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+
+body {
+    background-image: url('../images/back.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+}
+
+main {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    margin-top: -400px;
+}
+
+#ball {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+#content {
+    width: 60%;
+    height: 40px;
+    font-size: 30px;
+}
+
+.mimimi_box{
+    display: flex; /*アイコン、テキストボックスを調整する*/
+    align-items: center; /*アイコン、テキストボックスを縦方向の中心に*/
+    justify-content: center; /*アイコン、テキストボックスを横方向の中心に*/
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: 0px solid #0000ff;
+}
+
+.mimimi_inner{
+    display: flex; /*アイコン、テキストボックスを調整する*/
+    align-items: center; /*アイコン、テキストボックスを縦方向の中心に*/
+    justify-content: center; /*アイコン、テキストボックスを横方向の中心に*/
+    width: 100%;
+    height: 40px;
+    background-color: #00bfff; /*.mimimi_boxの枠線お角一部被るため透明に*/
+    border-radius: 15px;
+    position: relative;
+}
+
+#mimimi_text{
+    position: absolute;
+    z-index: 1; /*.mimimi_stringよりも上に配置*/
+    height: 100%;
+    width: 100%;
+    top: 0; left: 0; bottom: 0; right: 0;
+    border: none; /*枠線非表示*/
+    outline: none; /*フォーカス時の枠線非表示*/
+    padding: 0 10px;
+    font-size: 16px;
+    background-color: transparent; /*後ろの.mimimi_stringを見せるため*/
+    box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+}
+
+.mimimi_string{
+    position: absolute;
+    height: 100%;
+    width: 200px; /*文字列分の長さ*/
+    top: 0; left: 0; bottom: 0; right: 0;
+    padding-left: 10px; /*position: absolute;でのmarginは親要素はみ出す*/
+    font-size: 20x;
+    line-height: 50px; /*文字列を縦方向にmiddleに見せるため*/
+    background-color: transparent;
+    color: #ffffff;
+    box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+
+.fa-eye-slash{ /*アイコンに一定のスペースを設ける*/
+    height: 20px;
+    width: 20px;
+    padding: 5px 5px;
+}
+
+/*アニメーション*/
+#mimimi_text:focus + .mimimi_string{
+    color: #00bfff;
+    font-size: 10px;
+    line-height: 10px;
+    width: 85px;
+    height: 10px;
+    padding: 0 2px;
+    background-color: white;
+    transform:translate3d(5px, -6px, 0);
+}
+
+#mimimi_button {
+    height: 200px;
+    max-height: 400px;
+    cursor: pointer;
+    padding: 10px 0;
+    margin: 10px auto;
+    width: 200px;
+    max-width: 200px;
+    text-align: center;
+    line-height: 200px;
+
+    font-size: 40px;
+
+    color: #ffffff;
+    background: #00bfff;
+    opacity: 0.8;
+
+    text-shadow: 0 0 2px #00ffff;
+    -moz-text-shadow: 0 0 2px #00ffff;
+    -webkit-text-shadow: 0 0 2px #00ffff;
+
+    box-shadow: 0px 0px 30px #00bfff;
+    -moz-box-shadow: 0px 0px 30px #00bfff;
+    -webkit-box-shadow: 0px 0px 30px #00bfff;
+
+    border: 2px solid #00bfff;
+    /*border-radius: 8px;*/
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+
+    /*user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none; */
+    /* IE10かららしい */
+    
+}
+
+#mimimi_button h1 {
+    position: relative;
+    top:50%;
+    transform: translateY(-50%);
+    margin: 0 0 10px 0;
+    font-size: 1.0em;
+    line-height: 1.0em;
+    font-weight: 800;
+}
+
+#mimimi_button h2 {
+    position: relative;
+    top:40%;
+    transform: translateY(-50%);
+    font-size: 1.0em;
+    line-height: 1.0em;
+}
+
+/*
+#mimimi_button span {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 300px;
+    max-width: 300px;
+    text-align:center;
+}
+*/
+
+#mimimi_button:hover {
+    height: 200px;
+    max-height: 400px;
+    cursor: pointer;
+    padding: 10px 0;
+    margin: 10px auto;
+    width: 200px;
+    max-width: 200px;
+    text-align: center;
+    line-height: 200px;
+
+    color: #ffffff;
+    background: #ffa500;
+    opacity: 0.8;
+
+    text-shadow: 0 0 2px #ffa500;
+    -moz-text-shadow: 0 0 2px #ffa500;
+    -webkit-text-shadow: 0 0 2px #ffa500;
+
+    box-shadow: 0px 0px 30px #ffa500;
+    -moz-box-shadow: 0px 0px 30px #ffa500;
+    -webkit-box-shadow: 0px 0px 30px #ffa500;
+
+    border: 2px solid #ffa500;
+    /*border-radius: 8px;*/
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none; /* IE10かららしい */
+
+    /*border: 10px solid #ffa500;*/
+}
+
+#mimimi_button:active {
+    height: 200px;
+    max-height: 400px;
+    cursor: pointer;
+    padding: 10px 0;
+    margin: 10px auto;
+    width: 200px;
+    max-width: 200px;
+    text-align: center;
+    line-height: 200px;
+
+    color: #ffffff;
+    background: #ff5757;
+    opacity: 0.8;
+
+    text-shadow: 0 0 2px #ff5757;
+    -moz-text-shadow: 0 0 2px #ff5757;
+    -webkit-text-shadow: 0 0 2px #ff5757;
+
+    box-shadow: 0px 0px 30px #ff5757;
+    -moz-box-shadow: 0px 0px 30px #ff5757;
+    -webkit-box-shadow: 0px 0px 30px #ff5757;
+
+    border: 2px solid #ff5757;
+    /*border-radius: 8px;*/
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none; /* IE10かららしい */
+
+    /*border: 10px solid #ff0000;*/
+}
+
+#mimimi_count {
+    width: 90%;
+    max-width: 600px;
+    margin: 10px auto;
+    color: #0000ff;
+    font-weight: 600;
+}
+
+#mimimi_count p {
+    margin: 0 0 5px 0;
+}
+
+#mimimi_cross,
+#mimimi_count_total {
+    color: #0000ff;
+    font-size: 5.0em;
+    font-weight: 800;
+    line-height: 1.0em;
+}
+
+#mimimi_count_today,
+#mimimi_count_yesterday {
+    font-size: 2.0em;
+    font-weight: 800;
+    line-height: 1.0em;
+}
+
+#mimimi_description {
+    font-size: 0.9em;
+}
+
+#red {
+    color: red;
+}
+
+ul.sns_horizon {
+    list-style: none;
+    text-align: center;
+    display: table;
+    height: 63px;
+    margin: 20px auto;
+}
+
+ul.sns_horizon li {
+    display: table-cell;
+    vertical-align: top;
+}
+
+#mimimi_licenses {
+    position: absolute;
+    text-align: center;
+    position: relative;
+    z-index: 4;
+}
+
+@media only screen and (orientation: landscape) {
+    ul.sns_horizon {
+        width: 450px;
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    ul.sns_horizon {
+        width: 300px;
+    }
+
+    #mimimi_button h1 {
+        font-size: 1.2em;
+    }
+
+    #mimimi_cross,
+    #mimimi_count_total {
+        color: #0000ff;
+        font-size: 4em;
+    }
+
+    #mimimi_count_today,
+    #mimimi_count_yesterday {
+        font-size: 1.2em;
+    }
+}
+
+#mimimi_header {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    background: #00bfff;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 600;
+    /* z-index: 1; */
+}
+
+#mimimi_header h1 {
+    font-size: 1.0em;
+    font-weight: 600;
+}
+
+#mimimi_footer {
+    text-align: center;
+    /* position: fixed; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 52px;
+    line-height: 26px;
+    background: #00bfff;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 600;
+    /* z-index: 1; */
+}
+
+#mimimi_header a,
+#mimimi_footer a {
+    color: #ffffff;
+}
+
+#box {
+    max-width: 600px;
+    height: 100px;
+    background-color: #ffffff;
+    overflow: scroll;
+}
+
+#tweet {
+    width: 60%;
+    height: 40px;
+    font-size: 30px;
+}

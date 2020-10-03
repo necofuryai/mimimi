@@ -1,0 +1,36 @@
+{
+  "name": "nicojs",
+  "version": "1.1.8",
+  "description": "ニコニコ風コメントを実装するライブラリ",
+  "main": "lib/nico.js",
+  "author": "yuki540",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuki540net/nicoJS.git"
+  },
+  "scripts": {
+    "build": "gulp",
+    "watch": "gulp watch"
+  },
+  "keywords": [
+    "ニコニコ",
+    "ニコニコ動画",
+    "ニコニコ風コメント",
+    "nicoJS"
+  ],
+  "bugs": {
+    "url": "https://github.com/yuki540net/nicoJS/issues"
+  },
+  "homepage": "https://github.com/yuki540net/nicoJS#readme",
+  "devDependencies": {
+    "coffeescript": "^1.12.6",
+    "gulp": "^3.9.1",
+    "gulp-coffee": "^2.3.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-uglify": "^3.0.0"
+  },
+  "dependencies": {
+    "coffee-script": "^1.12.7"
+  }
+}
