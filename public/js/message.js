@@ -52,7 +52,7 @@ $(document).ready(function(){
             {
                 size: "large",
                 text: "現在のみみみ愛は " + num + " みみみ！です！",
-                hashtags: "友崎くん,みみみ弾幕", // ハッシュタグ
+                hashtags: "友崎くん,七海みなみボタン", // ハッシュタグ
                 url: "https://mimimi.web.app" // URL
             }
         );
